@@ -1,12 +1,44 @@
-let num = 266219 ;
-let numArr = num.toString().split('')
+'use strict'
 
-let numArrResult = numArr.reduce(function (mult, current) {
-    return  Number(mult) * Number(current);
-    // return mult * current; - но сработет и так тоже, без пеобразования в число каждого элемента массива
-});
+let lang = prompt('Введите желаемый язык("ru" либо "en")');
+let ruArr = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+let unArr = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
-console.log(numArrResult);
-let nnumPow = numArrResult ** 3;
-console.log(nnumPow);
-console.log(nnumPow.toString().substr(0,2));
+
+//with if/else construction
+
+if (lang == 'ru') {
+    console.log(ruArr);
+    alert(ruArr);
+}
+if (lang == 'en') {
+    console.log(unArr);
+    alert(unArr);
+}
+
+
+// with switch construction
+
+switch (lang) {
+    case 'ru':
+        console.log(ruArr);
+        alert(ruArr);
+        break;
+    case 'en':
+        console.log(unArr);
+        alert(unArr);
+    default:
+        console.log('Вы не выбрали никакой язык');
+        alert('Вы не выбрали никакой язык');
+        break;
+}
+
+
+// through a multidimensional array
+let multiArr = {
+    'ru': ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
+    'en': ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn']
+}
+
+alert(multiArr[lang]);
+console.log(multiArr[lang]);
